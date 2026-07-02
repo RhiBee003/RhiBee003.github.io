@@ -167,6 +167,13 @@ body {
   gap: 28px;
 }
 
+.project-card,
+.timeline-card {
+  opacity: 1;
+  transform: none;
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
 .project-card {
   position: relative;
   min-height: 260px;

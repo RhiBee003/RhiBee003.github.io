@@ -1,100 +1,64 @@
 
-
-// new scripts for two anime //
-
+// Contact and GitHub overlay buttons
 
 const loadingScreen = document.getElementById("loadingScreen");
-
 const bubbleText = document.getElementById("bubbleText");
+const overlayCharacter = document.getElementById("overlayCharacter");
+const contactBtn = document.getElementById("contactBtn");
+const githubBtn = document.getElementById("githubBtn");
 
-const overlayCharacter =
-  document.getElementById("overlayCharacter");
-
-/* EMAIL BUTTON */
-
-document
-  .getElementById("contactBtn")
-  .addEventListener("click", () => {
-
+if (contactBtn && loadingScreen && bubbleText && overlayCharacter) {
+  contactBtn.addEventListener("click", () => {
     startRedirect({
       image: "images/anime-girl.png",
       text: "I look forward to your message!",
-      url: "mailto:rhiblack0017@gmail.com"
+      url: "mailto:rhiblack0017@gmail.com",
     });
+  });
+}
 
-});
-
-/* GITHUB BUTTON */
-
-document
-  .getElementById("githubBtn")
-  .addEventListener("click", () => {
-
+if (githubBtn && loadingScreen && bubbleText && overlayCharacter) {
+  githubBtn.addEventListener("click", () => {
     startRedirect({
       image: "images/github-girl.png",
       text: "Check out my projects!",
-      url: "https://github.com/RhiBee003"
+      url: "https://github.com/RhiBee003",
     });
+  });
+}
 
-});
-
-/* MAIN FUNCTION */
-
-function startRedirect(data){
-
-  /* RESET */
+function startRedirect(data) {
+  if (!loadingScreen || !bubbleText || !overlayCharacter) {
+    window.open(data.url, data.url.startsWith("mailto:") ? "_self" : "_blank");
+    return;
+  }
 
   loadingScreen.classList.remove("hidden");
   loadingScreen.classList.remove("fade-out");
-
-  /* CHANGE CONTENT */
-
   overlayCharacter.src = data.image;
-
   bubbleText.textContent = data.text;
 
-  /* WAIT */
-
   setTimeout(() => {
-
     loadingScreen.classList.add("fade-out");
 
-    /* REDIRECT */
-
     setTimeout(() => {
-
-        if(data.url.startsWith("mailto:")){
-
-            const link = document.createElement("a");
-          
-            link.href = data.url;
-          
-            link.click();
-          
-          }
-          
-          else{
-          
-            window.open(data.url, "_blank");
-          
-          }
-
+      if (data.url.startsWith("mailto:")) {
+        window.location.href = data.url;
+      } else {
+        window.open(data.url, "_blank");
+      }
     }, 1000);
-
   }, 4000);
-
 }
 
-/* RESET OVERLAY */
-
-window.addEventListener("focus", resetOverlay);
-
-window.addEventListener("pageshow", resetOverlay);
-
-function resetOverlay(){
+function resetOverlay() {
+  if (!loadingScreen) {
+    return;
+  }
 
   loadingScreen.classList.add("hidden");
-
   loadingScreen.classList.remove("fade-out");
-
 }
+
+window.addEventListener("focus", resetOverlay);
+window.addEventListener("pageshow", resetOverlay);
