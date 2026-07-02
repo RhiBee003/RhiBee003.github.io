@@ -1,117 +1,202 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-      content="Rhiannon Black — software developer. Builder of WhiskerWatch and other web projects."
-    />
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rhiannon Black · Portfolio</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Instrument+Sans:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <header class="site-header">
-      <a class="site-name" href="#">Rhiannon Black</a>
-      <nav aria-label="Primary">
-        <a href="#work">Work</a>
-        <a href="#about">About</a>
-        <a href="https://github.com/RhiBee003" target="_blank" rel="noopener noreferrer">GitHub</a>
-      </nav>
-    </header>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="port.css">
+    <script src="port.js" defer></script>
+</head>
+<body>
+    <!-- FLOATING MENU -->
+    <div class="floating-nav">
+      <div class="menu-toggle" id="menuToggle">
+        <div class="menu-icon">.✦ ݁˖</div>
+      </div>
 
-    <main>
-      <section class="hero">
-        <p class="eyebrow">Software developer</p>
-        <h1>I build thoughtful web apps — from cat care dashboards to polished product experiences.</h1>
-        <p class="hero-lead">
-          Full-stack development with Rust, modern JavaScript, and a focus on calm, usable interfaces.
-        </p>
-        <div class="hero-links">
-          <a class="button button-primary" href="#work">See my work</a>
-          <a class="button button-ghost" href="https://github.com/RhiBee003" target="_blank" rel="noopener noreferrer"
-            >GitHub profile</a
-          >
-        </div>
-      </section>
+      <div class="menu-items" id="menuItems">
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
 
-      <section id="work" class="section">
-        <div class="section-head">
-          <h2>Selected work</h2>
-          <p>Projects I&apos;ve designed and shipped.</p>
-        </div>
-
-        <article class="project-card project-card-featured">
-          <div class="project-card-media">
-            <img src="assets/whiskerwatch-logo.png" alt="WhiskerWatch logo" width="120" height="120" />
-          </div>
-          <div class="project-card-body">
-            <p class="project-tag">Featured project</p>
-            <h3>WhiskerWatch</h3>
-            <p>
-              A full-featured cat care platform — breed guides, vet records, vaccine tracking, daily care routines,
-              community, and health reminders in one calm dashboard. Built as a production Rust web app with accounts,
-              payments, push notifications, and a mobile-friendly UI.
-            </p>
-            <ul class="project-stack">
-              <li>Rust</li>
-              <li>Axum</li>
-              <li>SQLite</li>
-              <li>Vanilla JS</li>
-            </ul>
-            <div class="project-links">
-              <a
-                class="button button-primary"
-                href="https://whiskerwatch.onrender.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Live site</a
-              >
-              <a
-                class="button button-ghost"
-                href="https://github.com/RhiBee003/whiskerWatch"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Source on GitHub</a
-              >
-            </div>
-          </div>
-        </article>
-      </section>
-
-      <section id="about" class="section section-about">
-        <div class="section-head">
-          <h2>About</h2>
-        </div>
-        <div class="about-grid">
-          <p>
-            I&apos;m Rhiannon Black, a developer who enjoys turning complex ideas into clear, friendly software. WhiskerWatch
-            started as a passion project for better cat care and grew into a full product with social features, vet
-            tooling, and subscription support.
-          </p>
-          <p>
-            You can find more of my code experiments and coursework on
-            <a href="https://github.com/RhiBee003" target="_blank" rel="noopener noreferrer">GitHub</a>.
-          </p>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
+    <!-- HERO -->
+    <section class="hero">
+      <h1>Hello, I'm <span>Rhiannon Black</span></h1>
       <p>
-        © <span id="year"></span> Rhiannon Black ·
-        <a href="https://github.com/RhiBee003" target="_blank" rel="noopener noreferrer">GitHub</a>
+        Creative developer & designer crafting aesthetic digital experiences with modern visuals, elegant interactions, and thoughtful user experiences.
       </p>
+
+      <a href="#projects" class="hero-btn">View My Work</a>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="projects-section" id="projects">
+      <h2 class="section-title">Featured Projects</h2>
+
+      <div class="project-grid">
+
+        <div class="project-card" onclick="window.open('https://whiskerwatch.onrender.com', '_blank')">
+          <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop" alt="WhiskerWatch">
+          <div class="project-content">
+            <h3>WhiskerWatch</h3>
+            <p>Premium cat care app — breed guides, vet records, and daily routines.</p>
+          </div>
+        </div>
+
+        <div class="project-card" onclick="window.location.href='project2.html'">
+          <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop" alt="Project">
+          <div class="project-content">
+            <h3>Project Two</h3>
+            <p>Minimal UI/UX experience.</p>
+          </div>
+        </div>
+
+        <div class="project-card" onclick="window.location.href='project3.html'">
+          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop" alt="Project">
+          <div class="project-content">
+            <h3>Project Three</h3>
+            <p>Interactive product showcase.</p>
+          </div>
+        </div>
+
+        <div class="project-card" onclick="window.location.href='project4.html'">
+          <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=1200&auto=format&fit=crop" alt="Project">
+          <div class="project-content">
+            <h3>Project Four</h3>
+            <p>Modern mobile application.</p>
+          </div>
+        </div>
+
+        <div class="project-card" onclick="window.location.href='project5.html'">
+          <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1200&auto=format&fit=crop" alt="Project">
+          <div class="project-content">
+            <h3>Project Five</h3>
+            <p>Creative portfolio concept.</p>
+          </div>
+        </div>
+
+        <div class="project-card" onclick="window.location.href='project6.html'">
+          <img src="https://images.unsplash.com/photo-1496171367470-9ed9a91ea931?q=80&w=1200&auto=format&fit=crop" alt="Project">
+          <div class="project-content">
+            <h3>Project Six</h3>
+            <p>Elegant e-commerce design.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="experience" id="experience">
+      <h2 class="section-title">Experience</h2>
+
+      <div class="timeline">
+        <div class="timeline-card">
+          <h3>Senior Designer / Developer</h3>
+          <p>
+            Built immersive digital experiences using modern frontend technologies while focusing on aesthetic branding and smooth user interaction.
+          </p>
+        </div>
+
+        <div class="timeline-card">
+          <h3>UI/UX Creative</h3>
+          <p>
+            Designed intuitive interfaces and elegant visual systems for startups, personal brands, and modern applications.
+          </p>
+        </div>
+
+        <div class="timeline-card">
+          <h3>Freelance Creative Technologist</h3>
+          <p>
+            Worked with multiple clients to craft visually engaging websites and interactive portfolio experiences.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+      <div class="contact-container">
+        <h2>Let's Connect</h2>
+        <p>
+          Interested in collaborating, working together, or discussing a project? Reach out anytime.
+        </p>
+
+        <div class="contact-links">
+          <a><button id="contactBtn">Contact Me</button></a>
+          <a href="https://www.linkedin.com/feed/">LinkedIn</a>
+          <a><button type="button" id="githubBtn">GitHub</button></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Email Loading Screen-->
+    <div id="loadingScreen" class="hidden">
+        <div class="overlay-content">
+          <div class="speech-bubble" id="bubbleText">
+            I look forward to your message!
+          </div>
+
+          <img
+          id="overlayCharacter"
+          class="anime-girl"
+          src="images/anime-girl.png"
+          alt="Anime Girl"
+          />
+
+          <div class="stars">
+            <span class="star star1">✦</span>
+            <span class="star star2">✦</span>
+            <span class="star star3">✦</span>
+            <span class="star star4">✦</span>
+            <span class="star star5">✦</span>
+          </div>
+        </div>
+      </div>
+
+    <footer>
+      © 2026 Rhiannon Black — Designed with style.
     </footer>
 
     <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
+      const toggle = document.getElementById('menuToggle');
+      const menu = document.getElementById('menuItems');
+
+      toggle.addEventListener('click', () => {
+        menu.classList.toggle('active');
+      });
+
+      document.querySelectorAll('.menu-items a').forEach(link => {
+        link.addEventListener('click', () => {
+          menu.classList.remove('active');
+        });
+      });
+
+      const cards = document.querySelectorAll('.project-card, .timeline-card');
+
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if(entry.isIntersecting){
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, {
+        threshold: 0.2
+      });
+
+      cards.forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(30px)';
+        card.style.transition = 'all 0.7s ease';
+        observer.observe(card);
+      });
     </script>
   </body>
 </html>
