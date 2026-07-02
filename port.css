@@ -181,6 +181,8 @@ body {
   display: flex;
   align-items: flex-end;
   padding: 24px;
+  text-decoration: none;
+  color: inherit;
 }
 
 .project-card:hover {
