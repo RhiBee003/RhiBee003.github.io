@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WhiskerWatch · Figma Design</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #2d2d2d;
+      color: #fff;
+    }
+
+    .viewer-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 16px 24px;
+      background: rgba(17, 17, 17, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .viewer-header a {
+      color: #f6c8d7;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .viewer-header a:hover {
+      text-decoration: underline;
+    }
+
+    .viewer-header h1 {
+      font-size: 1rem;
+      font-weight: 500;
+      text-align: center;
+      flex: 1;
+    }
+
+    .viewer-scroll {
+      padding: 24px 16px 48px;
+    }
+
+    .viewer-scroll img {
+      display: block;
+      width: 100%;
+      max-width: 960px;
+      margin: 0 auto;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+    }
+
+    @media (max-width: 768px) {
+      .viewer-header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 14px 16px;
+      }
+
+      .viewer-header h1 {
+        text-align: left;
+      }
+
+      .viewer-scroll {
+        padding: 16px 8px 32px;
+      }
+
+      .viewer-scroll img {
+        border-radius: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="viewer-header">
+    <a href="index.html#projects">← Back to Portfolio</a>
+    <h1>WhiskerWatch — Figma Design</h1>
+    <span aria-hidden="true"></span>
+  </header>
+
+  <main class="viewer-scroll">
+    <img src="assets/whiskerwatch-figma.png" alt="WhiskerWatch Figma design — full landing page mockup">
+  </main>
+</body>
+</html>

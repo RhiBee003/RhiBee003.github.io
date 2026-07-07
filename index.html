@@ -9,7 +9,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="port.css">
-    <script src="port.js" defer></script>
 </head>
 <body>
     <!-- FLOATING MENU -->
@@ -41,18 +40,17 @@
 
       <div class="project-grid">
 
-        <a
-          class="project-card"
-          href="https://whiskerwatch.onrender.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop" alt="WhiskerWatch">
+        <div class="project-card">
+          <img src="assets/whiskerwatch-figma.png" alt="WhiskerWatch Figma design">
           <div class="project-content">
             <h3>WhiskerWatch</h3>
             <p>Premium cat care app — breed guides, vet records, and daily routines.</p>
+            <div class="project-links">
+              <a href="https://whiskerwatch-dh13.onrender.com" target="_blank" rel="noopener noreferrer">Live App</a>
+              <a href="whiskerwatch-design.html">Figma Design</a>
+            </div>
           </div>
-        </a>
+        </div>
 
         <div class="project-card" onclick="window.location.href='project2.html'">
           <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop" alt="Project">
@@ -103,23 +101,16 @@
 
       <div class="timeline">
         <div class="timeline-card">
-          <h3>Senior Designer / Developer</h3>
+          <h3>TechProven — IT Support & Software Developer</h3>
           <p>
-            Built immersive digital experiences using modern frontend technologies while focusing on aesthetic branding and smooth user interaction.
+            Build and maintain full-stack web applications with Rust, JavaScript, Vue, and HTML/CSS. Diagnose software issues, support macOS environments, and deliver reliable fixes — collaborating remotely to ship technical solutions.
           </p>
         </div>
 
         <div class="timeline-card">
-          <h3>UI/UX Creative</h3>
+          <h3>RB Entertainment — Founder</h3>
           <p>
-            Designed intuitive interfaces and elegant visual systems for startups, personal brands, and modern applications.
-          </p>
-        </div>
-
-        <div class="timeline-card">
-          <h3>Freelance Creative Technologist</h3>
-          <p>
-            Worked with multiple clients to craft visually engaging websites and interactive portfolio experiences.
+            Own the company's digital infrastructure — websites, scheduling, contracts, and invoicing. Troubleshoot under pressure during live events and streamline day-to-day operations through automation and custom tooling.
           </p>
         </div>
       </div>
@@ -134,36 +125,12 @@
         </p>
 
         <div class="contact-links">
-          <a><button id="contactBtn">Contact Me</button></a>
-          <a href="https://www.linkedin.com/feed/">LinkedIn</a>
-          <a><button type="button" id="githubBtn">GitHub</button></a>
+          <a href="mailto:rhiblack0017@gmail.com">Contact Me</a>
+          <a href="https://www.linkedin.com/feed/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://github.com/RhiBee003" target="_blank" rel="noopener noreferrer">GitHub</a>
         </div>
       </div>
     </section>
-
-    <!-- Email Loading Screen-->
-    <div id="loadingScreen" class="hidden">
-        <div class="overlay-content">
-          <div class="speech-bubble" id="bubbleText">
-            I look forward to your message!
-          </div>
-
-          <img
-          id="overlayCharacter"
-          class="anime-girl"
-          src="images/anime-girl.png"
-          alt="Anime Girl"
-          />
-
-          <div class="stars">
-            <span class="star star1">✦</span>
-            <span class="star star2">✦</span>
-            <span class="star star3">✦</span>
-            <span class="star star4">✦</span>
-            <span class="star star5">✦</span>
-          </div>
-        </div>
-      </div>
 
     <footer>
       © 2026 Rhiannon Black — Designed with style.

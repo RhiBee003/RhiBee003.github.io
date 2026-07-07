@@ -183,12 +183,10 @@ body {
   backdrop-filter: blur(12px);
   border: 1px solid rgba(255,255,255,0.5);
   box-shadow: 0 12px 25px rgba(0,0,0,0.08);
-  cursor: pointer;
   transition: all 0.4s ease;
   display: flex;
   align-items: flex-end;
   padding: 24px;
-  text-decoration: none;
   color: inherit;
 }
 
@@ -232,6 +230,33 @@ body {
 .project-content p {
   font-size: 0.95rem;
   color: #f3f3f3;
+}
+
+.project-links {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+.project-links a {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-decoration: none;
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.4);
+  color: white;
+  transition: 0.3s ease;
+}
+
+.project-links a:hover {
+  background: var(--pink);
+  color: var(--black);
+  border-color: var(--pink);
 }
 
 /* EXPERIENCE */
@@ -334,167 +359,5 @@ footer {
     width: 60px;
     height: 60px;
   }
-}
-
-/* Fullscreen Overlay email redirect */
-#loadingScreen {
-    position: fixed;
-    inset: 0;
-    background: rgba(255,255,255,0.96);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-  
-    opacity: 1;
-    transition: opacity 1s ease;
-  }
-  
-  .hidden {
-    display: none !important;
-  }
-  
-  .fade-out {
-    opacity: 0;
-  }
-  
-  /* Center Content */
-  .overlay-content {
-    position: relative;
-    text-align: center;
-    animation: floatUp 1s ease;
-  }
-  
-  /* Speech Bubble */
-  .speech-bubble {
-    position: relative;
-    background: white;
-    border: 3px solid #7aa6ff;
-    border-radius: 25px;
-    padding: 20px 30px;
-    margin-bottom: 25px;
-    font-size: 1.4rem;
-    color: #355;
-    font-weight: 600;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-  
-    animation: bubblePop 0.6s ease;
-  }
-  
-  .speech-bubble::after {
-    content: "";
-    position: absolute;
-    bottom: -15px;
-    left: 50%;
-    transform: translateX(-50%);
-    border-width: 15px 15px 0;
-    border-style: solid;
-    border-color: white transparent transparent;
-  }
-  
-/*anime girl */
-
-.anime-girl{
-    width:min(900px, 80vw);
-    height:auto;
-  
-    animation:
-      float 3s ease-in-out infinite,
-      fadeIn 0.8s ease;
-  
-    filter: drop-shadow(0 10px 25px rgba(0,0,0,0.15));
-  }
-  
-  /* Floating Animation */
-  
-  @keyframes float{
-    0%{
-      transform:translateY(0px);
-    }
-  
-    50%{
-      transform:translateY(-8px);
-    }
-  
-    100%{
-      transform:translateY(0px);
-    }
-  }
-  
-  /* Fade In */
-  
-  @keyframes fadeIn{
-    from{
-      opacity:0;
-      transform:scale(0.9);
-    }
-  
-    to{
-      opacity:1;
-      transform:scale(1);
-    }
-  }
-
-  /* Stars */
-  .star {
-    position: absolute;
-    color: #ffd966;
-    font-size: 1.5rem;
-    animation: twinkle 1.5s infinite alternate;
-  }
-  
-  .star1 { top: 0; left: -40px; }
-  .star2 { top: 50px; right: -50px; }
-  .star3 { bottom: 30px; left: -60px; }
-  .star4 { bottom: 0; right: -40px; }
-  .star5 { top: -20px; right: 20px; }
-  
-  .star:nth-child(even) {
-    animation-delay: 0.7s;
-  }
-  
-  /* Animations */
-  @keyframes twinkle {
-    from {
-      opacity: 0.3;
-      transform: scale(0.8);
-    }
-    to {
-      opacity: 1;
-      transform: scale(1.2);
-    }
-  }
-  
-  @keyframes bubblePop {
-    0% {
-      transform: scale(0);
-    }
-    80% {
-      transform: scale(1.05);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
-  
-  @keyframes floatUp {
-    from {
-      transform: translateY(20px);
-      opacity: 0;
-    }
-    to {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
-
-  /* fixing contact bttn */
-
-#contactBtn {
-    all:unset;
-}
-
-#githubBtn {
-    all:unset;
 }
   
