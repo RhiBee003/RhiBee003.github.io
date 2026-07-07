@@ -14,27 +14,24 @@
       box-sizing: border-box;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
       font-family: 'Poppins', sans-serif;
-      background: #2d2d2d;
+      background: #1a1a1a;
       color: #fff;
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
     }
 
     .viewer-header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
+      flex-shrink: 0;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 16px;
-      padding: 16px 24px;
-      background: rgba(17, 17, 17, 0.92);
-      backdrop-filter: blur(10px);
+      padding: 14px 20px;
+      background: rgba(17, 17, 17, 0.96);
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
 
@@ -51,43 +48,67 @@
     }
 
     .viewer-header h1 {
-      font-size: 1rem;
+      font-size: 0.95rem;
       font-weight: 500;
       text-align: center;
       flex: 1;
     }
 
-    .viewer-scroll {
-      padding: 24px 16px 48px;
+    .viewer-open-figma {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.45rem 0.85rem;
+      border-radius: 999px;
+      background: #fac8dd;
+      color: #3d2a36 !important;
+      font-weight: 600;
+      text-decoration: none !important;
     }
 
-    .viewer-scroll img {
-      display: block;
+    .viewer-open-figma:hover {
+      background: #f2b8d4;
+    }
+
+    .viewer-frame-wrap {
+      flex: 1;
+      min-height: 0;
+      padding: 16px;
+      background: #2d2d2d;
+    }
+
+    .viewer-frame {
       width: 100%;
-      max-width: 960px;
+      height: calc(100vh - 72px);
+      height: calc(100dvh - 72px);
+      max-width: 1200px;
       margin: 0 auto;
-      height: auto;
+      border: 0;
       border-radius: 12px;
+      background: #fff;
       box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
     }
 
     @media (max-width: 768px) {
       .viewer-header {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 14px 16px;
+        flex-wrap: wrap;
+        padding: 12px 14px;
       }
 
       .viewer-header h1 {
+        order: 3;
+        flex-basis: 100%;
         text-align: left;
+        font-size: 0.88rem;
       }
 
-      .viewer-scroll {
-        padding: 16px 8px 32px;
+      .viewer-frame-wrap {
+        padding: 8px;
       }
 
-      .viewer-scroll img {
+      .viewer-frame {
         border-radius: 8px;
+        height: calc(100dvh - 96px);
       }
     }
   </style>
@@ -96,11 +117,21 @@
   <header class="viewer-header">
     <a href="index.html#projects">← Back to Portfolio</a>
     <h1>WhiskerWatch — Figma Design</h1>
-    <span aria-hidden="true"></span>
+    <a
+      class="viewer-open-figma"
+      href="https://www.figma.com/design/NXHAsUWFTWf3fMkD53nkQi/WhiskerWatch?node-id=3-147"
+      target="_blank"
+      rel="noopener noreferrer"
+    >Open in Figma</a>
   </header>
 
-  <main class="viewer-scroll">
-    <img src="assets/whiskerwatch-figma.png" alt="WhiskerWatch Figma design — full landing page mockup">
+  <main class="viewer-frame-wrap">
+    <iframe
+      class="viewer-frame"
+      title="WhiskerWatch Figma design"
+      src="https://www.figma.com/embed?embed_host=share&amp;url=https%3A%2F%2Fwww.figma.com%2Fdesign%2FNXHAsUWFTWf3fMkD53nkQi%2FWhiskerWatch%3Fnode-id%3D3-147"
+      allowfullscreen
+    ></iframe>
   </main>
 </body>
 </html>
