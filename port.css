@@ -373,13 +373,32 @@ body > :not(#mesh-bg) {
 }
 
 /* Projects */
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+.project-scroller {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: max(1.25rem, calc((100% - 1080px) / 2 + 1.25rem));
+  padding: 0.25rem max(1.25rem, calc((100% - 1080px) / 2 + 1.25rem)) 1rem;
+  scrollbar-width: none;
+  mask-image: linear-gradient(to right, transparent, #000 2%, #000 98%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 2%, #000 98%, transparent);
+}
+
+.project-scroller::-webkit-scrollbar {
+  display: none;
+}
+
+.project-track {
+  display: flex;
   gap: 1.25rem;
+  width: max-content;
+  padding-right: 1.25rem;
 }
 
 .project-card {
+  flex: 0 0 min(420px, 82vw);
+  scroll-snap-align: start;
   border-radius: var(--radius);
   overflow: hidden;
   background: var(--surface-strong);
@@ -562,10 +581,6 @@ body > :not(#mesh-bg) {
 
   .nav-links a:hover {
     background: var(--pink-soft);
-  }
-
-  .project-grid {
-    grid-template-columns: 1fr;
   }
 }
 
