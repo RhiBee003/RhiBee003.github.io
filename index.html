@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Rhiannon Black · Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,11 +11,17 @@
     <link rel="stylesheet" href="port.css">
 </head>
 <body>
+    <canvas id="mesh-bg" aria-hidden="true"></canvas>
+
     <!-- FLOATING MENU -->
     <div class="floating-nav">
-      <div class="menu-toggle" id="menuToggle">
-        <div class="menu-icon">.✦ ݁˖</div>
-      </div>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menuItems">
+        <span class="menu-icon" aria-hidden="true">
+          <span class="menu-bar"></span>
+          <span class="menu-bar"></span>
+          <span class="menu-bar"></span>
+        </span>
+      </button>
 
       <div class="menu-items" id="menuItems">
         <a href="#projects">Projects</a>
@@ -26,12 +32,49 @@
 
     <!-- HERO -->
     <section class="hero">
+      <div class="hero-stars" aria-hidden="true">
+        <div class="hero-stars-row">
+          <div class="hero-star-item">
+            <div class="hero-star-beam" aria-hidden="true"></div>
+            <svg class="hero-star" viewBox="0 0 24 24" role="presentation">
+              <polygon class="hero-star-fill" points="12,2 14.59,9.01 22.24,9.26 16.12,14.14 18.24,21.76 12,17.77 5.76,21.76 7.88,14.14 1.76,9.26 9.41,9.01"/>
+            </svg>
+          </div>
+          <div class="hero-star-item">
+            <div class="hero-star-beam" aria-hidden="true"></div>
+            <svg class="hero-star" viewBox="0 0 24 24" role="presentation">
+              <polygon class="hero-star-fill" points="12,2 14.59,9.01 22.24,9.26 16.12,14.14 18.24,21.76 12,17.77 5.76,21.76 7.88,14.14 1.76,9.26 9.41,9.01"/>
+            </svg>
+          </div>
+          <div class="hero-star-item">
+            <div class="hero-star-beam" aria-hidden="true"></div>
+            <svg class="hero-star" viewBox="0 0 24 24" role="presentation">
+              <polygon class="hero-star-fill" points="12,2 14.59,9.01 22.24,9.26 16.12,14.14 18.24,21.76 12,17.77 5.76,21.76 7.88,14.14 1.76,9.26 9.41,9.01"/>
+            </svg>
+          </div>
+          <div class="hero-star-item">
+            <div class="hero-star-beam" aria-hidden="true"></div>
+            <svg class="hero-star" viewBox="0 0 24 24" role="presentation">
+              <polygon class="hero-star-fill" points="12,2 14.59,9.01 22.24,9.26 16.12,14.14 18.24,21.76 12,17.77 5.76,21.76 7.88,14.14 1.76,9.26 9.41,9.01"/>
+            </svg>
+          </div>
+          <div class="hero-star-item">
+            <div class="hero-star-beam" aria-hidden="true"></div>
+            <svg class="hero-star" viewBox="0 0 24 24" role="presentation">
+              <polygon class="hero-star-fill" points="12,2 14.59,9.01 22.24,9.26 16.12,14.14 18.24,21.76 12,17.77 5.76,21.76 7.88,14.14 1.76,9.26 9.41,9.01"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-content">
       <h1>Hello, I'm <span>Rhiannon Black</span></h1>
       <p>
         Creative developer & designer crafting aesthetic digital experiences with modern visuals, elegant interactions, and thoughtful user experiences.
       </p>
 
       <a href="#projects" class="hero-btn">View My Work</a>
+      </div>
     </section>
 
     <!-- PROJECTS -->
@@ -59,11 +102,18 @@
           </div>
         </div>
 
-        <div class="project-card" onclick="window.location.href='project2.html'">
-          <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop" alt="Project">
+        <div class="project-card">
+          <img
+            src="assets/cotton-elder-hero.jpg"
+            alt="Cotton Elder Construction website"
+          >
           <div class="project-content">
-            <h3>Project Two</h3>
-            <p>Minimal UI/UX experience.</p>
+            <h3>Cotton Elder Construction</h3>
+            <p>Renovation company site with admin panel, photo gallery, and contact intake.</p>
+            <div class="project-links">
+              <a href="https://cotton-elder-construction.onrender.com" target="_blank" rel="noopener noreferrer">Live Site</a>
+              <a href="https://github.com/RhiBee003/cotton-elder-construction" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
           </div>
         </div>
 
@@ -143,17 +193,24 @@
       © 2026 Rhiannon Black — Designed with style.
     </footer>
 
+    <script src="port-mesh.js"></script>
     <script>
       const toggle = document.getElementById('menuToggle');
       const menu = document.getElementById('menuItems');
 
       toggle.addEventListener('click', () => {
-        menu.classList.toggle('active');
+        const isOpen = menu.classList.toggle('active');
+        toggle.classList.toggle('is-open', isOpen);
+        toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        toggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
       });
 
       document.querySelectorAll('.menu-items a').forEach(link => {
         link.addEventListener('click', () => {
           menu.classList.remove('active');
+          toggle.classList.remove('is-open');
+          toggle.setAttribute('aria-expanded', 'false');
+          toggle.setAttribute('aria-label', 'Open menu');
         });
       });
 
