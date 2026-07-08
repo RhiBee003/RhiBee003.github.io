@@ -356,16 +356,6 @@ body > :not(#mesh-bg):not(.floating-nav) {
   z-index: 1;
 }
 
-.project-card-whiskerwatch img {
-  object-fit: contain;
-  object-position: top center;
-  background: linear-gradient(180deg, #fff0f7 0%, #fac8dd 55%, #f2b8d4 100%);
-}
-
-.project-card-whiskerwatch:hover img {
-  transform: scale(1.02);
-}
-
 .project-card img {
   position: absolute;
   width: 100%;
