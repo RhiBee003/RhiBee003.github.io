@@ -3,116 +3,87 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="description" content="Rhiannon Black — creative developer building sleek web apps and marketing sites." />
-  <meta name="theme-color" content="#0c0c0e" />
+  <meta name="description" content="Rhiannon Black — creative developer crafting aesthetic digital experiences." />
+  <meta name="theme-color" content="#fff7fa" />
   <title>Rhiannon Black · Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="port.css?v=5" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="port.css?v=6" />
 </head>
 <body>
-  <div class="page-bg" aria-hidden="true"></div>
-  <div class="nav-backdrop" id="nav-backdrop" aria-hidden="true"></div>
+  <canvas id="mesh-bg" aria-hidden="true"></canvas>
 
-  <header class="site-header" id="top">
-    <div class="container header-inner">
-      <a class="logo" href="#top" aria-label="Rhiannon Black home">
-        <span class="logo-mark">RB</span>
-        <span class="logo-text">
-          <span class="logo-name">Rhiannon Black</span>
-          <span class="logo-tag">Developer</span>
-        </span>
-      </a>
-
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
-        <span class="nav-toggle-icon" aria-hidden="true"></span>
-      </button>
-
-      <nav class="site-nav" id="site-nav" aria-label="Primary">
-        <a href="#projects">Projects</a>
-        <a href="#experience">Experience</a>
-        <a href="#contact" class="nav-cta">Contact</a>
-      </nav>
-    </div>
+  <header class="top-nav">
+    <a class="brand" href="#top">Rhiannon Black</a>
+    <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="navLinks" aria-label="Open menu">
+      <span class="menu-bars" aria-hidden="true"></span>
+    </button>
+    <nav class="nav-links" id="navLinks" aria-label="Primary">
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact" class="nav-pill">Say hi</a>
+    </nav>
   </header>
 
   <main>
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-copy reveal">
-          <p class="eyebrow">Full-stack · Design-driven · Detail-focused</p>
-          <h1>Digital products built with precision, clarity, and polish.</h1>
-          <p class="hero-lead">
-            I design and ship modern web experiences — from marketing sites and admin panels to full product UIs — with the same clean, intentional craft you’d expect from a premium build.
-          </p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#projects">View projects</a>
-            <a class="btn btn-ghost" href="#contact">Get in touch</a>
-          </div>
-          <dl class="hero-stats">
-            <div>
-              <dt>2+</dt>
-              <dd>Live products shipped</dd>
-            </div>
-            <div>
-              <dt>Full-stack</dt>
-              <dd>Front to back delivery</dd>
-            </div>
-            <div>
-              <dt>Remote</dt>
-              <dd>Available for new work</dd>
-            </div>
-          </dl>
+    <section class="hero" id="top">
+      <div class="hero-stars reveal" aria-hidden="true">
+        <div class="hero-stars-row">
+          <div class="hero-star-item"><div class="hero-star-beam"></div><svg class="hero-star" viewBox="0 0 24 24"><polygon class="hero-star-fill" points="12,2 14.59,9.01 22.24,9.26 16.12,14.14 18.24,21.76 12,17.77 5.76,21.76 7.88,14.14 1.76,9.26 9.41,9.01"/></svg></div>
+          <div class="hero-star-item"><div class="hero-star-beam"></div><svg class="hero-star" viewBox="0 0 24 24"><polygon class="hero-star-fill" points="12,2 14.59,9.01 22.24,9.26 16.12,14.14 18.24,21.76 12,17.77 5.76,21.76 7.88,14.14 1.76,9.26 9.41,9.01"/></svg></div>
+          <div class="hero-star-item"><div class="hero-star-beam"></div><svg class="hero-star" viewBox="0 0 24 24"><polygon class="hero-star-fill" points="12,2 14.59,9.01 22.24,9.26 16.12,14.14 18.24,21.76 12,17.77 5.76,21.76 7.88,14.14 1.76,9.26 9.41,9.01"/></svg></div>
+          <div class="hero-star-item"><div class="hero-star-beam"></div><svg class="hero-star" viewBox="0 0 24 24"><polygon class="hero-star-fill" points="12,2 14.59,9.01 22.24,9.26 16.12,14.14 18.24,21.76 12,17.77 5.76,21.76 7.88,14.14 1.76,9.26 9.41,9.01"/></svg></div>
+          <div class="hero-star-item"><div class="hero-star-beam"></div><svg class="hero-star" viewBox="0 0 24 24"><polygon class="hero-star-fill" points="12,2 14.59,9.01 22.24,9.26 16.12,14.14 18.24,21.76 12,17.77 5.76,21.76 7.88,14.14 1.76,9.26 9.41,9.01"/></svg></div>
+        </div>
+      </div>
+
+      <div class="hero-inner reveal" style="--reveal-delay: 80ms">
+        <p class="kicker">Creative developer & designer</p>
+        <h1>Hello, I'm <span>Rhiannon Black</span></h1>
+        <p class="hero-text">
+          I build polished digital experiences — modern visuals, smooth interactions, and thoughtful UX from concept to launch.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-dark" href="#projects">View my work</a>
+          <a class="btn btn-soft" href="#contact">Get in touch</a>
         </div>
       </div>
     </section>
 
     <section class="section" id="projects">
-      <div class="container">
-        <div class="section-head reveal">
-          <p class="eyebrow">Selected work</p>
-          <h2>Featured projects</h2>
-          <p>Live apps and sites — designed, built, and deployed end to end.</p>
+      <div class="wrap">
+        <div class="section-intro reveal">
+          <span class="tag">Featured</span>
+          <h2>Projects</h2>
+          <p>Live work — designed, built, and shipped.</p>
         </div>
 
         <div class="project-grid">
           <article class="project-card reveal">
-            <a class="project-media" href="https://whiskerwatch-dh13.onrender.com" target="_blank" rel="noopener noreferrer">
-              <img
-                src="assets/whiskerwatch-hero.jpg"
-                alt="WhiskerWatch app"
-                width="1280"
-                height="800"
-                loading="lazy"
-              />
+            <a class="project-shot" href="https://whiskerwatch-dh13.onrender.com" target="_blank" rel="noopener noreferrer">
+              <img src="assets/whiskerwatch-hero.jpg" alt="WhiskerWatch" width="1280" height="800" loading="lazy" />
             </a>
-            <div class="project-body">
+            <div class="project-info">
               <h3>WhiskerWatch</h3>
-              <p>Premium cat care app with breed guides, vet records, vaccine tracking, and daily routines.</p>
+              <p>Premium cat care app — breed guides, vet records, and daily routines.</p>
               <div class="project-links">
-                <a class="btn btn-primary btn-sm" href="https://whiskerwatch-dh13.onrender.com" target="_blank" rel="noopener noreferrer">Live app</a>
-                <a class="btn btn-ghost btn-sm" href="whiskerwatch-design.html">Figma design</a>
+                <a href="https://whiskerwatch-dh13.onrender.com" target="_blank" rel="noopener noreferrer">Live app</a>
+                <a href="whiskerwatch-design.html">Figma design</a>
               </div>
             </div>
           </article>
 
-          <article class="project-card reveal" style="--reveal-delay: 80ms">
-            <a class="project-media" href="https://cotton-elder-construction.onrender.com" target="_blank" rel="noopener noreferrer">
-              <img
-                src="assets/cotton-elder-hero.jpg?v=2"
-                alt="Cotton Elder Construction website"
-                width="1280"
-                height="800"
-                loading="lazy"
-              />
+          <article class="project-card reveal" style="--reveal-delay: 100ms">
+            <a class="project-shot" href="https://cotton-elder-construction.onrender.com" target="_blank" rel="noopener noreferrer">
+              <img src="assets/cotton-elder-hero.jpg?v=2" alt="Cotton Elder Construction" width="1280" height="800" loading="lazy" />
             </a>
-            <div class="project-body">
+            <div class="project-info">
               <h3>Cotton Elder Construction</h3>
-              <p>Renovation company site with admin panel, photo gallery, contact intake, and Render deployment.</p>
+              <p>Renovation company site with admin panel, photo gallery, and contact intake.</p>
               <div class="project-links">
-                <a class="btn btn-primary btn-sm" href="https://cotton-elder-construction.onrender.com" target="_blank" rel="noopener noreferrer">Live site</a>
-                <a class="btn btn-ghost btn-sm" href="https://github.com/RhiBee003/cotton-elder-construction" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://cotton-elder-construction.onrender.com" target="_blank" rel="noopener noreferrer">Live site</a>
+                <a href="https://github.com/RhiBee003/cotton-elder-construction" target="_blank" rel="noopener noreferrer">GitHub</a>
               </div>
             </div>
           </article>
@@ -120,25 +91,22 @@
       </div>
     </section>
 
-    <section class="section section-split" id="experience">
-      <div class="container">
-        <div class="section-head reveal">
-          <p class="eyebrow">Background</p>
+    <section class="section section-muted" id="experience">
+      <div class="wrap">
+        <div class="section-intro reveal">
+          <span class="tag">Background</span>
           <h2>Experience</h2>
-          <p>Building software, supporting teams, and owning digital operations.</p>
         </div>
 
-        <div class="card-grid">
-          <article class="service-card reveal">
-            <span class="card-icon">01</span>
+        <div class="timeline">
+          <article class="timeline-card reveal">
             <h3>TechProven — IT Support & Software Developer</h3>
             <p>
               Build and maintain full-stack web applications with Rust, JavaScript, Vue, and HTML/CSS. Diagnose software issues, support macOS environments, and deliver reliable fixes — collaborating remotely to ship technical solutions.
             </p>
           </article>
 
-          <article class="service-card reveal" style="--reveal-delay: 80ms">
-            <span class="card-icon">02</span>
+          <article class="timeline-card reveal" style="--reveal-delay: 80ms">
             <h3>RB Entertainment — Founder</h3>
             <p>
               Own the company's digital infrastructure — websites, scheduling, contracts, and invoicing. Troubleshoot under pressure during live events and streamline operations through automation and custom tooling.
@@ -148,40 +116,25 @@
       </div>
     </section>
 
-    <section class="section contact-section" id="contact">
-      <div class="container contact-grid">
-        <div class="contact-copy reveal">
-          <p class="eyebrow">Contact</p>
-          <h2>Let's build something sharp.</h2>
-          <p>Interested in collaborating or discussing a project? Reach out — I respond within a business day.</p>
-          <div class="contact-details">
-            <a href="mailto:rhiblack0017@gmail.com">rhiblack0017@gmail.com</a>
-            <a href="https://www.linkedin.com/feed/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            <a href="https://github.com/RhiBee003" target="_blank" rel="noopener noreferrer">GitHub</a>
-          </div>
-        </div>
-
-        <div class="contact-panel reveal" style="--reveal-delay: 100ms">
-          <p class="contact-panel-label">Open to</p>
-          <ul class="check-list">
-            <li>Marketing & product websites</li>
-            <li>Admin dashboards & internal tools</li>
-            <li>Front-end UI implementation</li>
-            <li>Full-stack feature work</li>
-          </ul>
-          <a class="btn btn-primary btn-full" href="mailto:rhiblack0017@gmail.com">Send an email</a>
+    <section class="section" id="contact">
+      <div class="wrap contact-wrap reveal">
+        <span class="tag">Contact</span>
+        <h2>Let's connect</h2>
+        <p>Interested in collaborating or discussing a project? I'd love to hear from you.</p>
+        <div class="contact-row">
+          <a class="btn btn-dark" href="mailto:rhiblack0017@gmail.com">Email me</a>
+          <a class="btn btn-soft" href="https://www.linkedin.com/feed/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a class="btn btn-soft" href="https://github.com/RhiBee003" target="_blank" rel="noopener noreferrer">GitHub</a>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>&copy; <span id="year"></span> Rhiannon Black. All rights reserved.</p>
-      <a href="#top">Back to top</a>
-    </div>
+    <p>&copy; <span id="year"></span> Rhiannon Black</p>
   </footer>
 
-  <script src="port.js?v=1"></script>
+  <script src="port-mesh.js?v=3"></script>
+  <script src="port.js?v=2"></script>
 </body>
 </html>
