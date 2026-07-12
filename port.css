@@ -583,7 +583,7 @@ body > :not(#mesh-bg) {
   }
 
   .project-card {
-    flex: 0 0 min(268px, 78vw);
+    flex: 0 0 min(240px, 74vw);
   }
 }
 

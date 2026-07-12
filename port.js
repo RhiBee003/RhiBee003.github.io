@@ -8,19 +8,34 @@
   }
 
   if (toggle && nav) {
-    toggle.addEventListener("click", function () {
+    function closeMenu() {
+      nav.classList.remove("is-open");
+      toggle.classList.remove("is-open");
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.setAttribute("aria-label", "Open menu");
+    }
+
+    toggle.addEventListener("click", function (e) {
+      e.stopPropagation();
       const open = nav.classList.toggle("is-open");
       toggle.classList.toggle("is-open", open);
       toggle.setAttribute("aria-expanded", open ? "true" : "false");
       toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
     });
 
+    nav.addEventListener("click", function (e) {
+      e.stopPropagation();
+    });
+
+    document.addEventListener("click", function () {
+      if (nav.classList.contains("is-open")) {
+        closeMenu();
+      }
+    });
+
     nav.querySelectorAll("a").forEach(function (link) {
       link.addEventListener("click", function () {
-        nav.classList.remove("is-open");
-        toggle.classList.remove("is-open");
-        toggle.setAttribute("aria-expanded", "false");
-        toggle.setAttribute("aria-label", "Open menu");
+        closeMenu();
       });
     });
   }
